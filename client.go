@@ -67,7 +67,7 @@ func (client *Client) IsAvailable() bool {
 	return !client.shutdown && !client.closing
 }
 
-func (client *Client) registraterCall(call *Call) (uint64, error) {
+func (client *Client) registerCall(call *Call) (uint64, error) {
 	client.mu.Lock()
 	defer client.mu.Unlock()
 
@@ -195,7 +195,7 @@ func (client *Client) send(call *Call) {
 	client.sending.Lock()
 	defer client.sending.Unlock()
 
-	seq, err := client.registraterCall(call)
+	seq, err := client.registerCall(call)
 	if err != nil {
 		call.Error = err
 		call.done()
