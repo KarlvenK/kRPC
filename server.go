@@ -231,8 +231,8 @@ func Register(rcvr interface{}) error {
 
 const (
 	connected        = "200 Connected to kRPC"
-	defaultRPCPath   = "/_krpc_"
-	defaultDebugPath = "/debug/krpc"
+	defaultRPCPath   = "/_kRPC_"
+	defaultDebugPath = "/debug/kRPC"
 )
 
 //ServeHTTP implements an http.Handler that answers RPC requests
